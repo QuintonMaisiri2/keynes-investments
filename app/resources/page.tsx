@@ -3,25 +3,20 @@ import { Playfair_Display } from "next/font/google"
 import Link from "next/link"
 import { BookOpen, FileText, Video, Award } from "lucide-react"
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  display: "swap",
-})
-
 export default function ResourcesPage() {
   return (
-    <div>
+    <div className="font-roboto">
       <PageHeader
         title="Resources & Education"
         description="Educational materials created by our student members to help you build your investment knowledge."
+        imageUrl="images/education.jpg"
       />
 
       <section className="py-12 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="md:col-span-2">
-              <h2 className={`${playfair.className} text-brown text-3xl font-medium mb-6`}>Keynes Academy</h2>
+              <h2 className={` text-brown text-3xl font-medium mb-6`}>Keynes Academy</h2>
               <p className="text-brown text-lg mb-8">
                 Our student-created educational series designed to build your investing knowledge from the ground up.
                 From basic concepts to advanced strategies, we've got you covered.
@@ -29,7 +24,7 @@ export default function ResourcesPage() {
 
               <div className="space-y-8">
                 <div className="border border-brown/20 rounded-lg p-6">
-                  <h3 className={`${playfair.className} text-brown text-2xl font-medium mb-4`}>
+                  <h3 className={` text-brown text-2xl font-medium mb-4`}>
                     Fundamentals of Investing
                   </h3>
                   <div className="space-y-4">
@@ -70,7 +65,7 @@ export default function ResourcesPage() {
                 </div>
 
                 <div className="border border-brown/20 rounded-lg p-6">
-                  <h3 className={`${playfair.className} text-brown text-2xl font-medium mb-4`}>Valuation Methods</h3>
+                  <h3 className={` text-brown text-2xl font-medium mb-4`}>Valuation Methods</h3>
                   <div className="space-y-4">
                     <div className="flex items-start">
                       <FileText className="text-brown mr-3 mt-1 flex-shrink-0" size={20} />
@@ -109,7 +104,7 @@ export default function ResourcesPage() {
                 </div>
 
                 <div className="border border-brown/20 rounded-lg p-6">
-                  <h3 className={`${playfair.className} text-brown text-2xl font-medium mb-4`}>ESG Investing</h3>
+                  <h3 className={` text-brown text-2xl font-medium mb-4`}>ESG Investing</h3>
                   <div className="space-y-4">
                     <div className="flex items-start">
                       <FileText className="text-brown mr-3 mt-1 flex-shrink-0" size={20} />
@@ -150,7 +145,7 @@ export default function ResourcesPage() {
             </div>
 
             <div>
-              <h2 className={`${playfair.className} text-brown text-3xl font-medium mb-6`}>Recommended Reading</h2>
+              <h2 className={` text-brown text-3xl font-medium mb-6`}>Recommended Reading</h2>
               <div className="space-y-6">
                 <div className="border border-brown/20 rounded-lg p-6">
                   <h3 className="text-brown font-medium text-xl mb-4">Essential Books</h3>

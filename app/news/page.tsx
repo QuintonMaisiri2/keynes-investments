@@ -5,11 +5,6 @@ import { Input } from "@/components/ui/input"
 import Link from "next/link"
 import { CalendarIcon } from "lucide-react"
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  display: "swap",
-})
 
 export default function NewsPage() {
   const formatDate = (date: Date): string => {
@@ -25,12 +20,13 @@ export default function NewsPage() {
       <PageHeader
         title="News & Updates"
         description="Stay current with Keynes Investments events, announcements, and market insights."
+        imageUrl="/images/news.jpg"
       />
 
       <section className="py-12 px-6 md:px-12">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
-            <h2 className={`${playfair.className} text-brown text-3xl font-medium mb-8`}>Latest Updates</h2>
+            <h2 className={` text-brown text-3xl font-medium mb-8`}>Latest Updates</h2>
 
             <div className="space-y-8">
               <div className="border-b border-brown/10 pb-8">
@@ -38,7 +34,7 @@ export default function NewsPage() {
                   <CalendarIcon className="mr-2" size={16} />
                   <span>{formatDate(new Date(2023, 9, 15))}</span>
                 </p>
-                <h3 className={`${playfair.className} text-brown text-2xl font-medium mb-3`}>
+                <h3 className={` text-brown text-2xl font-medium mb-3`}>
                   Keynes Investments Reaches $1M Assets Under Management
                 </h3>
                 <p className="text-brown mb-4">
@@ -56,7 +52,7 @@ export default function NewsPage() {
                   <CalendarIcon className="mr-2" size={16} />
                   <span>{formatDate(new Date(2023, 8, 22))}</span>
                 </p>
-                <h3 className={`${playfair.className} text-brown text-2xl font-medium mb-3`}>
+                <h3 className={` text-brown text-2xl font-medium mb-3`}>
                   Annual Pitch Competition Winners Announced
                 </h3>
                 <p className="text-brown mb-4">
@@ -74,7 +70,7 @@ export default function NewsPage() {
                   <CalendarIcon className="mr-2" size={16} />
                   <span>{formatDate(new Date(2023, 7, 8))}</span>
                 </p>
-                <h3 className={`${playfair.className} text-brown text-2xl font-medium mb-3`}>
+                <h3 className={` text-brown text-2xl font-medium mb-3`}>
                   Q2 Donation: $32,500 to Education Access Initiative
                 </h3>
                 <p className="text-brown mb-4">
@@ -92,7 +88,7 @@ export default function NewsPage() {
                   <CalendarIcon className="mr-2" size={16} />
                   <span>{formatDate(new Date(2023, 6, 17))}</span>
                 </p>
-                <h3 className={`${playfair.className} text-brown text-2xl font-medium mb-3`}>
+                <h3 className={` text-brown text-2xl font-medium mb-3`}>
                   New Partnership with Financial Leaders Association
                 </h3>
                 <p className="text-brown mb-4">
@@ -109,7 +105,7 @@ export default function NewsPage() {
 
           <div>
             <div className="bg-amber-50/50 p-6 rounded-lg mb-8">
-              <h3 className={`${playfair.className} text-brown text-2xl font-medium mb-4`}>Newsletter</h3>
+              <h3 className={` text-brown text-2xl font-medium mb-4`}>Newsletter</h3>
               <p className="text-brown mb-4">
                 Subscribe to our monthly newsletter for investment insights, event announcements, and updates on our
                 charitable impact.
@@ -125,7 +121,7 @@ export default function NewsPage() {
             </div>
 
             <div className="border border-brown/20 rounded-lg p-6 mb-8">
-              <h3 className={`${playfair.className} text-brown text-2xl font-medium mb-4`}>Upcoming Events</h3>
+              <h3 className={` text-brown text-2xl font-medium mb-4`}>Upcoming Events</h3>
               <div className="space-y-4">
                 <div>
                   <p className="text-brown font-medium">Investment Workshop Series</p>
@@ -147,7 +143,7 @@ export default function NewsPage() {
             </div>
 
             <div className="border border-brown/20 rounded-lg p-6">
-              <h3 className={`${playfair.className} text-brown text-2xl font-medium mb-4`}>Archive</h3>
+              <h3 className={` text-brown text-2xl font-medium mb-4`}>Archive</h3>
               <div className="space-y-2">
                 <Link href="#" className="block text-brown hover:underline">
                   2023 (12)

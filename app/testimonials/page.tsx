@@ -14,6 +14,7 @@ export default function TestimonialsPage() {
       <PageHeader
         title="Testimonials & Member Spotlights"
         description="Hear from our members, alumni, and charity partners about their experience with Keynes Investments."
+        imageUrl="/images/testimonials.jpg"
       />
 
       <section className="py-12 px-6 md:px-12">

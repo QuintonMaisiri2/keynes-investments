@@ -5,25 +5,20 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Phone, Clock, Linkedin, Instagram, Twitter } from "lucide-react"
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  display: "swap",
-})
-
 export default function ContactPage() {
   return (
-    <div>
+    <div className="font-roboto">
       <PageHeader
         title="Contact Us"
         description="Reach out to the Keynes Investments team for inquiries, partnerships, or to learn more about our fund."
+        imageUrl="/images/contact.jpg"
       />
 
       <section className="py-12 px-6 md:px-12">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h2 className={`${playfair.className} text-brown text-3xl font-medium mb-6`}>Get In Touch</h2>
+              <h2 className={` text-brown text-3xl font-medium mb-6`}>Get In Touch</h2>
               <p className="text-brown text-lg mb-8">
                 Whether you're interested in investing with us, joining our student team, or exploring potential
                 partnerships, we'd love to hear from you. Fill out the form, and a member of our team will get back to
@@ -74,7 +69,7 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <h2 className={`${playfair.className} text-brown text-3xl font-medium mb-6`}>Contact Information</h2>
+              <h2 className={` text-brown text-3xl font-medium mb-6`}>Contact Information</h2>
 
               <div className="space-y-6 mb-12">
                 <div className="flex items-start">
@@ -112,7 +107,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <h3 className={`${playfair.className} text-brown text-xl font-medium mb-4`}>Connect With Us</h3>
+              <h3 className={` text-brown text-xl font-medium mb-4`}>Connect With Us</h3>
               <div className="flex space-x-6 mb-8">
                 <a href="#" className="text-brown hover:text-brown/80 transition-colors">
                   <Linkedin size={28} />
