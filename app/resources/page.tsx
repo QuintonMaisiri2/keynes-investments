@@ -76,21 +76,25 @@ export default function ResourcesPage() {
             alt="books"
             className="h-[70vh] absolute top-0"
           />
-          <div className="absolute bottom-10 right-0 w-full bg-brown w-[20vw] p-6 space-y-6">
+          <div className="absolute bottom-10 right-0 w-full bg-brown max-w-[20vw] p-6 space-y-6">
             <p className="border-b pb-2 w-max">Quick links</p>
             {sections.map((section, index) => (
-              <div key={index} className="flex items-start">
-                <div>
-                  <Link
-                    href={section.href}
-                    className="font-medium hover:underline"
-                  >
-                    {section.title}
-                  </Link>
-                  <p className="text-sm mt-1">{section.description}</p>
-                </div>
+              <div key={index} className="">
+                <Link
+                  href={section.href}
+                  className="font-medium hover:underline"
+                >
+                  {section.title}
+                </Link>
+                <p className="text-sm mt-1">{section.description}</p>
               </div>
             ))}
+            <div >
+              <Link href={"#quiz"} className="font-medium hover:underline">
+                {"Quizzes"}
+              </Link>
+              <p className="text-sm mt-1">Interactive quizzes to reinforce learning and track your progress.</p>
+            </div>
           </div>
         </div>
       </section>
