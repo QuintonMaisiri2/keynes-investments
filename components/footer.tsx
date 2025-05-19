@@ -7,9 +7,9 @@ import { Mail, Linkedin, Instagram, Twitter } from "lucide-react";
 import { navItems } from "./main-nav";
 
 const documents = [
-  { href: "/terms-and-conditions", label: "Terms and Conditions" },
-  { href: "/privacy-policy", label: "Privacy Policy" },
-  { href: "/disclaimer", label: "Disclaimer" },
+  { href: "documents/Terms & Conditions.pdf", label: "Terms and Conditions" },
+  { href: "documents/Privacy Policy.pdf", label: "Privacy Policy" },
+  { href: "documents/Disclaimer.pdf", label: "Disclaimer" },
 ];
 
 export function Footer() {
@@ -63,13 +63,15 @@ export function Footer() {
       <div className="border-y border-brown/20 py-6 flex items-center justify-between w-full">
         <div className="flex gap-5">
           {documents.map((doc) => (
-            <Link
+            <a
               key={doc.href}
               href={doc.href}
+              download={true}
+              target="_blank"
               className="block text-sm hover:underline"
             >
               {doc.label}
-            </Link>
+            </a>
           ))}
         </div>
         <p>Copyright &copy; Keynes Investments. All rights reserved</p>
