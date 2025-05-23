@@ -35,7 +35,7 @@ export function MainNav() {
       </Link>
 
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex items-center space-x-8">
+      <nav className="hidden lg:flex items-center space-x-8">
         {navItems.map((item) => (
           <Link
             key={item.href}
@@ -48,13 +48,13 @@ export function MainNav() {
       </nav>
 
       {/* Mobile Menu Button */}
-      <button onClick={toggleMenu} className="text-brown md:hidden z-10">
+      <button onClick={toggleMenu} className="text-brown lg:hidden z-[20]">
         {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="absolute top-0 left-0 w-full h-screen bg-white z-10 flex flex-col items-center justify-center space-y-8 md:hidden">
+        <div className="absolute top-0 left-0 w-full h-screen bg-white z-[20] flex flex-col items-center justify-center space-y-8 lg:hidden">
           {navItems.map((item) => (
             <Link
               key={item.href}

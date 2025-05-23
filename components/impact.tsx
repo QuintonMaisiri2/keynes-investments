@@ -2,7 +2,7 @@ import { Progress } from "./ui/progress";
 
 export default function Impact(){
     return (
-         <section className="py-12 px-6 md:px-12 bg-amber-50/50 min-h-screen flex items-center justify-between relative">
+         <section className="py-12 px-6 md:px-12 bg-amber-50/50 min-h-screen flex items-center justify-between relative" id="impact">
         <div className="max-w-6xl mx-auto">
           <h3 className={` text-brown text-3xl md:text-4xl font-medium`}>
             Social Impact Tracker
@@ -14,7 +14,7 @@ export default function Impact(){
                 <h4 className={` text-brown text-2xl font-medium mb-4`}>
                   Total Donations
                 </h4>
-                <div className="flex items-end">
+                <div className="flex md:items-end md:flex-row flex-col" >
                   <span className={` text-brown text-5xl font-medium`}>
                     $127,500
                   </span>

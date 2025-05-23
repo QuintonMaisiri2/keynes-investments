@@ -1,4 +1,4 @@
-import { BookOpen, Users, TrendingUp, Heart } from "lucide-react";
+import { BookOpen, Users, TrendingUp, Heart, Calendar } from "lucide-react";
 
 export default function Benefits(){
     return (
@@ -48,6 +48,15 @@ export default function Benefits(){
               <p className="">
                 Help direct donations to important causes and learn about
                 ethical investing strategies.
+              </p>
+            </div>
+            <div className="p-6 border rounded-lg">
+              <Calendar className=" mb-4" size={28} />
+              <h3 className=" text-xl font-medium mb-2">
+                Events
+              </h3>
+              <p className="">
+               Exclusive attendance at speaker events
               </p>
             </div>
           </div>

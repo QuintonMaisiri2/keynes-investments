@@ -121,3 +121,18 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.bobbing-arrow {
+      font-size: 2rem;
+      animation: bob 1s infinite ease-in-out;
+      display: inline-block;
+    }
+
+    @keyframes bob {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(10px);
+      }
+    }

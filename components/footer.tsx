@@ -15,7 +15,7 @@ const documents = [
 export function Footer() {
   return (
     <footer className="w-full py-12 px-6 md:px-24 text-brown border-t border-brown/20 font-roboto relative">
-      <div className=" flex justify-between mb-6">
+      <div className=" flex flex-col md:flex-row gap-5 md:gap-0 justify-between mb-6">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2 mb-6">
             <Image
@@ -60,8 +60,8 @@ export function Footer() {
           </nav>
         </div>
       </div>
-      <div className="border-y border-brown/20 py-6 flex items-center justify-between w-full">
-        <div className="flex gap-5">
+      <div className="border-y border-brown/20 py-6 flex flex-col md:flex-row md:items-center md:justify-between w-full gap-5 md:gap-0">
+        <div className="flex flex-wrap gap-5">
           {documents.map((doc) => (
             <a
               key={doc.href}

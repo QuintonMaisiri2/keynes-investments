@@ -20,15 +20,15 @@ export default function Facts() {
   ];
   return (
     <section className="py-12 border-t border-brown/10 min-h-screen flex flex-col relative ">
-      <div className="flex items-start justify-between px-6 md:px-12 py-10">
+      <div className="flex flex-col md:flex-row items-start justify-between px-6 md:px-12 py-10">
         <h3 className={`text-brown font-bold text-center w-1/3`}>
           Quick Facts
         </h3>
-        <div className="grid grid-cols-3 gap-x-10 gap-y-6 w-2/3">
+        <div className="grid md:grid-cols-3 gap-x-10 gap-y-6 lg:w-2/3">
           {facts.map((fact, index) => (
             <div
               key={index}
-              className="flex flex-col items-start gap-10 px-4 border-l border-l-2"
+              className="flex flex-col items-start gap-5 md:gap-10 md:px-4 md:border-l md:border-l-2"
             >
               <h4 className={`text-brown text-3xl font-bold`}>{fact.title}</h4>
               <div className="text-brown/70 font-bold">
@@ -39,21 +39,17 @@ export default function Facts() {
           ))}
         </div>
       </div>
-      <div className="py-20 px-6 md:px-12 bg-amber-50/50 flex mt-10">
-        <h3 className={` text-brown text-center font-medium w-1/3`}>
+      <div className="py-20 px-6 md:px-12 bg-amber-50/50 flex flex-col md:flex-row mt-10">
+        <h3 className={` text-brown md:text-center font-medium w-1/3`}>
           About Us
         </h3>
-        <div className="w-2/3 text-brown font-ebgaramon text-xl md:text-2xl px-4 border-l border-l-2">
+        <div className="md:w-2/3 text-brown font-ebgaramon text-xl md:text-2xl md:px-4 md:border-l md:border-l-2">
           <p className="leading-[150%]">
-            Keynes Investments is a student-managed private investment club
-            committed to cultivating financial skillsets while generating
-            long-term, ethical returns. What makes us different is our dual
-            mission: delivering competitive financial performance while making a
-            positive social impact
+          Keynes Investments was founded in 2020 by a group of undergraduate finance students determined to rethink how capital is deployed. Frustrated with conventional investment vehicles prioritizing short-term gain, the group envisioned a private, student-led club dedicated to long-term value creation and ethical principles.
           </p>
           <button className="mt-6 bg-brown text-white px-4 py-2 rounded-md hover:bg-brown/90">
             <a
-              href="https://www.keynesinvestments.com/about"
+              href="/strategy"
               className="font-bold text-lg mt-4 hover:underline"
             >
               Learn More

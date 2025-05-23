@@ -1,30 +1,31 @@
 const philosophies = [
   {
-    title: "Long-Term Orientation",
+    title: "Value Investing",
     description:
-      "We focus on investments with strong fundamentals that will deliver value over years, not weeks or months.",
+      "We focus on identifying undervalued companies with solid fundamentals to maximize long-term returns.",
   },
   {
-    title: "Value-Based Approach",
+    title: "ESG-Screened Equities",
     description:
-      "We seek companies trading at a discount to their intrinsic value, providing a margin of safety.",
+      "Our investment universe prioritizes companies meeting rigorous environmental, social, and governance criteria.",
   },
   {
-    title: "ESG Integration",
+    title: "Diversification Across Sectors and Geographies",
     description:
-      "Environmental, social, and governance factors are core to our analysis, not just add-ons.",
+      "We reduce risk and capture opportunities by spreading investments across industries and global markets.",
   },
   {
-    title: "Risk Mitigation",
+    title: "Mid-Cap Growth Plays and Underappreciated Dividend Stocks",
     description:
-      "We employ diversification and careful position sizing to protect capital while seeking returns.",
+      "We target mid-sized companies with high growth potential and dividend stocks overlooked by the market.",
   },
 ];
+
 
 export default function Philosophy() {
     return (
          <section className="px-6 md:px-12 min-h-screen">
-        <div className="max-w-7xl mx-auto">
+        <div className="md:max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-end h-screen">
             <div className="flex flex-col gap-12">
               <h2
@@ -34,18 +35,15 @@ export default function Philosophy() {
                 <span className="text-brown/80">Philosophy</span>
               </h2>
               <p className="text-brown text-lg ">
-                At Keynes Investments, we believe in a disciplined, long-term
-                approach to investing that balances risk management with growth
-                potential. Our investment philosophy is built on four key
-                pillars:
+                At Keynes Investments, We take a long-term, fundamentals-based approach to investing. Our goal is to generate value with purpose. Our investment philosophy is built on four key pillars:
               </p>
               <a href="/join#form">
                 <button className="p-4 bg-brown">Join us now</button>
               </a>
             </div>
 
-            <div className="w-2/3 relative h-full">
-             <div className="absolute w-full top-[10vh]">
+            <div className="lg:w-2/3 relative lg:h-full">
+             <div className="absolute w-full top-[10vh] hidden lg:block">
                <div className="relative h-[60vh] overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 bg-gradient-to-r from-rose-200 via-amber-200 to-amber-100"></div>
                 <div className="flex items-center justify-center">
@@ -62,7 +60,7 @@ export default function Philosophy() {
                 </div>
               </div>
              </div>
-              <div className="space-y-6 bg-brown p-6 absolute bottom-0 -right-32 w-3/4">
+              <div className="space-y-6 bg-brown p-6 lg:absolute bottom-0 -right-32  w-full">
                 {philosophies.map((philosophy, index) => (
                   <div key={index}>
                     <p className="font-light text-sm ">

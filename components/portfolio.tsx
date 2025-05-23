@@ -3,8 +3,8 @@ import { Progress } from "./ui/progress";
 export default function Portfolio() {
     return (
          <section className="py-12 px-6 md:px-12  min-h-screen flex relative items-center justify-between gap-x-24">
-        <div className="bg-[url('/images/portfolio.jpg')] w-1/3 h-[50vh] bg-cover"></div>
-        <div className="w-2/3">
+        <div className="bg-[url('/images/portfolio.jpg')] w-1/3 h-[50vh] bg-cover hidden md:block"></div>
+        <div className="md:w-2/3">
           <h3 className={` text-brown text-3xl md:text-4xl font-bold`}>
             Portfolio Snapshot
           </h3>
