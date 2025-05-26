@@ -7,7 +7,7 @@ import { Mail, MapPin, Phone, Clock, Linkedin, Instagram, Twitter } from "lucide
 
 export default function ContactPage() {
   return (
-    <div className="font-roboto">
+    <div className="font-ebgaramond">
       <PageHeader
         title="Contact Us"
         description="Reach out to the Keynes Investments team for inquiries, partnerships, or to learn more about our fund."
@@ -20,9 +20,8 @@ export default function ContactPage() {
             <div>
               <h2 className={` text-brown text-3xl font-medium mb-6`}>Get In Touch</h2>
               <p className="text-brown text-lg mb-8">
-                Whether you're interested in investing with us, joining our student team, or exploring potential
-                partnerships, we'd love to hear from you. Fill out the form, and a member of our team will get back to
-                you soon.
+                Interested in joining our team, investing with us, or partnering on a project? We’d love to connect. Fill out the form, and we’ll get back to you shortly.
+
               </p>
 
               <form className="space-y-6">

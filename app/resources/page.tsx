@@ -9,20 +9,12 @@ import { title } from "process";
 export default function ResourcesPage() {
   const sections = [
     {
-      title: "Beginner",
+      title: "Beginner : Foundations of Financial Literacy",
       description: "Basic concepts and terminology for new investors.",
       href: "#beginner",
       text: [
-        `The Beginner section at Keynes Investments is your starting point
-            for learning how to manage and grow your money. It covers key topics
-            like budgeting, saving, compounding, and understanding risk—all
-            explained in simple, clear language. No prior knowledge is needed,
-            making it perfect for anyone new to investing`,
-        `You'll also get introduced to common investment types like stocks,
-            bonds, and mutual funds, along with tips on setting goals and
-            building smart financial habits. This section helps you avoid
-            beginner mistakes and prepares you for more advanced strategies
-            later on.`,
+        `Start your journey with the basics of managing and growing your money. This section covers essential topics like budgeting, saving, compounding, and understanding risk—all in plain, accessible language. No prior knowledge needed.`,
+        `You'll also explore common investment types—like stocks, bonds, and mutual funds—while learning how to set goals and build smart financial habits. It's your first step toward becoming a confident, values-driven investor.`,
       ],
       imgSrc: "images/block.jpg",
       resources: {
@@ -56,12 +48,13 @@ export default function ResourcesPage() {
       },
     },
     {
-      title: "Intermediate",
+      title: "Intermediate : Building a Strategic Portfolio",
       description: "In-depth analysis and valuation methods.",
       href: "#intermediate",
       text: [
-        "The Intermediate section is for those who understand the basics and are ready to take their investing to the next level. It dives deeper into topics like portfolio building, asset allocation, and understanding market trends. You’ll learn how to balance risk and return while developing a more strategic approach to investing.",
-        "This section also introduces tools like ETFs, index funds, and technical analysis, giving you the skills to make more confident decisions. It’s ideal for investors looking to grow and manage a diversified portfolio with purpose.",
+        "Ready to go beyond the basics? This section is for students who understand foundational concepts and want to develop a more strategic, hands-on approach to investing.",
+        "You'll dive into portfolio construction, asset allocation, and reading market trends—while learning how to balance risk and return effectively. We’ll also introduce practical tools like ETFs, index funds, and technical analysis to sharpen your decision-making.",
+        "Perfect for aspiring investors aiming to build and manage a diversified portfolio with purpose and confidence"
       ],
       imgSrc: "images/intermediate.jpg",
       resources: {
@@ -95,12 +88,12 @@ export default function ResourcesPage() {
       },
     },
     {
-      title: "Advanced",
+      title: "Advanced : Mastering the Markets",
       description: "Complex strategies and market dynamics.",
       href: "#advanced",
       text: [
-        "The Advanced section is designed for experienced investors aiming to refine their strategies. It covers complex topics like derivatives, alternative assets, macroeconomic analysis, and advanced risk management. This level is all about maximizing returns while navigating market complexities.",
-        "You’ll also explore in-depth research methods, trading strategies, and investment psychology. It’s a deep dive into the tools and thinking used by professionals and seasoned investors.",
+        "Go beyond the basics with advanced tools and strategies. Learn about derivatives, alternative assets, macro trends, and risk management.",
+        "Sharpen your edge with deep research methods, trading tactics, and investment psychology—designed for serious, impact-driven investors.",
       ],
       imgSrc: "images/cap.jpg",
       resources: {
@@ -135,14 +128,14 @@ export default function ResourcesPage() {
     },
   ];
   return (
-    <div className="font-roboto">
+    <div className="font-ebgaramond">
       <PageHeader
         title="Resources & Education"
         description="Educational materials created by our student members to help you build your investment knowledge."
-        imageUrl="images/education.jpg"
+        imageUrl="images/resource.jpg"
       />
 
-      <section className="py-12 px-6 lg:px-12 min-h-screen flex flex-col lg:flex-row gap-12 max-w-7xl lg:items-end mx-auto">
+      {/* <section className="py-12 px-6 lg:px-12 min-h-screen flex flex-col lg:flex-row gap-12 max-w-7xl lg:items-end mx-auto">
         <div className=" lg:mx-auto gap-12 flex flex-col lg:w-1/2">
           <h2
             className={` text-brown text-4xl md:text-7xl font-medium border-b border-b-2 border-b-brown/50 w-max`}
@@ -189,7 +182,7 @@ export default function ResourcesPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {sections.map((section, index) => (
         <section
@@ -199,7 +192,7 @@ export default function ResourcesPage() {
         >
           <div className="flex flex-col gap-12 lg:w-1/2">
             <h2
-              className={` text-brown text-4xl md:text-7xl font-medium w-max h-max`}
+              className={` text-brown text-4xl md:text-7xl font-medium`}
             >
               {section.title} <br />
             </h2>
@@ -222,25 +215,27 @@ export default function ResourcesPage() {
                   {section.resources.title}
                 </h3>
                 <div className="space-y-4">
-                 {section.resources.books.map((book, index)=>{
-                  return  <div className="flex items-start" key={index}>
-                    <BookOpen
-                      className="text-brown mr-3 mt-1 flex-shrink-0"
-                      size={20}
-                    />
-                    <div>
-                      <Link
-                        href="#"
-                        className="text-brown font-medium hover:underline"
-                      >
-                       {book.title}
-                      </Link>
-                      <p className="text-brown/80 text-sm mt-1">
-                       {book.synopis}
-                      </p>
-                    </div>
-                  </div>
-                 })}
+                  {section.resources.books.map((book, index) => {
+                    return (
+                      <div className="flex items-start" key={index}>
+                        <BookOpen
+                          className="text-brown mr-3 mt-1 flex-shrink-0"
+                          size={20}
+                        />
+                        <div>
+                          <Link
+                            href="#"
+                            className="text-brown font-medium hover:underline"
+                          >
+                            {book.title}
+                          </Link>
+                          <p className="text-brown/80 text-sm mt-1">
+                            {book.synopis}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>

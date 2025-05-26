@@ -9,7 +9,7 @@ import Apply from "@/components/apply";
 
 export default function JoinPage() {
   return (
-    <div className="font-roboto">
+    <div className="font-ebgaramond">
       <PageHeader
         title="Join the Fund"
         description="Become part of a student-led investment team focused on learning, growth, and positive impact."
@@ -19,7 +19,7 @@ export default function JoinPage() {
 
       <Involved />
 
-      <Benefits />
+      {/* <Benefits /> */}
       <Apply />
     </div>
   );

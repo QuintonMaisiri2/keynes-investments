@@ -30,20 +30,24 @@ export default function Involved() {
             How to Get Involved
           </h2>
           <p className="text-brown text-lg mb-6">
-            Keynes Investments welcomes passionate students who are interested
-            in finance, investing, and making a positive impact. Our recruitment
-            process is designed to identify motivated individuals who align with
-            our values and mission.
+            Keynes Investments is open to high school students and pre-college
+            learners who are passionate about finance, investing, and creating
+            meaningful social impact. We’re looking for curious minds eager to
+            learn, collaborate, and lead with purpose.
           </p>
-          <h2 className="font-medium text-2xl text-brown mb-4">
+          <h2 className="font-bold text-2xl text-brown mb-4">
             Membership Criteria
           </h2>
-          <ul className="text-brown list-disc space-y-2 mb-6">  
+          <ul className="text-brown list-disc space-y-2 mb-6">
             <li>Must be enrolled in a university program (UG or PG)</li>
-            <li>Academic performance in finance/econ fields preferred</li>
-            <li>Passion for ESG and ethical capital markets</li>
-            <li>Committee interviews for shortlisted applicants</li>
+            <li>Demonstrated interest in finance, economics, or related fields</li>
+            <li>Strong academic curiosity and leadership potentia</li>
+            <li>Passion for ethical investing and ESG principles</li>
+            <li>
+              Interview with our founding committee for shortlisted applicants
+            </li>
           </ul>
+          <p className="italic text-brown mb-6">Our application cycle opens annually. Only a select number of students are admitted to maintain depth of mentorship and quality of collaboration.</p>
           <img
             src="/images/involved.jpg"
             alt="Join Keynes Investments"

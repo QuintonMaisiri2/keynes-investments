@@ -9,7 +9,7 @@ interface PageHeaderProps {
 
 export function PageHeader({ title, description,imageUrl }: PageHeaderProps) {
   return (
-    <div className="pt-12 px-6 md:px-12 border-b border-brown/10 min-h-[90vh] bg-cover bg-center w-screen relative flex items-end justify-center font-roboto"
+    <div className="pt-12 px-6 md:px-12 border-b border-brown/10 min-h-[90vh] bg-cover bg-center w-screen relative flex items-end justify-center font-ebgaramond"
       style={{
         backgroundImage: `url(${imageUrl})`,
       }}>

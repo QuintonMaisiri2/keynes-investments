@@ -63,7 +63,7 @@ export default function Philosophy() {
               <div className="space-y-6 bg-brown p-6 lg:absolute bottom-0 -right-32  w-full">
                 {philosophies.map((philosophy, index) => (
                   <div key={index}>
-                    <p className="font-light text-sm ">
+                    <p className=" ">
                       <span className="font-bold">{philosophy.title}</span> -{" "}
                       {philosophy.description}{" "}
                     </p>

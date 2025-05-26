@@ -45,7 +45,7 @@ export default function Facts() {
         </h3>
         <div className="md:w-2/3 text-brown font-ebgaramon text-xl md:text-2xl md:px-4 md:border-l md:border-l-2">
           <p className="leading-[150%]">
-          Keynes Investments was founded in 2020 by a group of undergraduate finance students determined to rethink how capital is deployed. Frustrated with conventional investment vehicles prioritizing short-term gain, the group envisioned a private, student-led club dedicated to long-term value creation and ethical principles.
+         Founded in 2025 by passionate and principled high school students, Keynes Investments is a private, student-led investment club redefining how capital is used for good. Built in response to the short-term focus of conventional investing, the club brings together a select group of students committed to long-term value creation, ethical investing, and continuous learning. Membership is highly selective—reserved for those who show both sharp analytical acumen and a genuine drive to make an impact.
           </p>
           <button className="mt-6 bg-brown text-white px-4 py-2 rounded-md hover:bg-brown/90">
             <a

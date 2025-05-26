@@ -49,14 +49,14 @@ const risks = [
 
 export default function StrategyPage() {
   return (
-    <div className="font-roboto">
+    <div className="font-ebgaramond">
       <PageHeader
         title="Investment Strategy"
         description="Our approach to generating long-term value while maintaining ethical standards."
         imageUrl="/images/strategy.jpg"
       />
       <Philosophy />
-      <div className="bg-amber-50 my-16 ">
+      {/* <div className="bg-amber-50 my-16 ">
         <div className="py-12 max-w-7xl mx-auto text-brown space-y-8">
           <h2 className="text-4xl font-bold">Sector Focus</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -75,9 +75,9 @@ export default function StrategyPage() {
             })}
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <section className="py-12 px-6 md:px-12 min-h-screen max-w-7xl mx-auto  flex flex-col lg:flex-row gap-12">
+      <section className="py-12 px-r md:pr-12 min-h-screen max-w-7xl mx-auto  flex flex-col lg:flex-row gap-12">
         <div className="mt-20 ">
           <h2
             className={` text-brown text-4xl md:text-7xl font-medium mb-6 pb-2 border-b-2 border-b-brown/50 w-max`}

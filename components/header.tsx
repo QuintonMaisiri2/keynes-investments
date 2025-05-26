@@ -12,7 +12,7 @@ export default function Header() {
             Investments
           </h2>
           <p className="text-xl md:text-4xl mt-6">
-            Redefine investing as a tool for inclusive progress—financially, socially, and intellectually.
+           Investing in your future, impacting the world.
           </p>
 
           <div className="flex flex-wrap gap-4 mt-8">

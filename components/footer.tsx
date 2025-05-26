@@ -14,7 +14,7 @@ const documents = [
 
 export function Footer() {
   return (
-    <footer className="w-full py-12 px-6 md:px-24 text-brown border-t border-brown/20 font-roboto relative">
+    <footer className="w-full py-12 px-6 md:px-24 bg-brown border-t border-brown/20 font-ebgaramond relative">
       <div className=" flex flex-col md:flex-row gap-5 md:gap-0 justify-between mb-6">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2 mb-6">
@@ -25,7 +25,7 @@ export function Footer() {
               alt="kenyes logo"
               className="w-16"
             ></Image>
-            <h3 className="font-bold">Keynes Investments</h3>
+            <h3 className="font-bold text-2xl">Keynes Investments</h3>
           </div>
 
           <div className="mt-6">
@@ -37,7 +37,7 @@ export function Footer() {
               />
               <Button
                 type="submit"
-                className="bg-brown hover:bg-brown/90 whitespace-nowrap"
+                className="bg-white hover:bg-amber-50/50 hover:shadow hover:text-white/90  text-brown whitespace-nowrap"
               >
                 Subscribe
               </Button>
@@ -60,13 +60,12 @@ export function Footer() {
           </nav>
         </div>
       </div>
-      <div className="border-y border-brown/20 py-6 flex flex-col md:flex-row md:items-center md:justify-between w-full gap-5 md:gap-0">
+      <div className="border-y border-white/20 py-6 flex flex-col md:flex-row md:items-center md:justify-between w-full gap-5 md:gap-0">
         <div className="flex flex-wrap gap-5">
           {documents.map((doc) => (
             <a
               key={doc.href}
               href={doc.href}
-              download={true}
               target="_blank"
               className="block text-sm hover:underline"
             >

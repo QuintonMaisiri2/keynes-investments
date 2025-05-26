@@ -13,22 +13,16 @@ export default function Home() {
     "/images/mentor.png"
   ]
   return (
-    <div className="flex flex-col font-roboto">
+    <div className="flex flex-col font-ebgaramond">
       <Header />
       <Facts />
       <Portfolio />
       <div className=" min-h-[50vh] flex flex-col gap-y-6 lg:flex-row lg:items-center bg-brown py-12 px-6 md:px-12 ">
-        <div className="lg:w-1/3">
-          <p>Quick Quote</p>
-        </div>
         <p className="lg:text-7xl md:text-5xl text-3xl font-ebgaramond ">
-          “At Keynes, we believe that investment is not just a financial
-          act—it’s a moral one. Our student-led mission is to grow value while
-          planting seeds of positive change in the community around us.”
+          “At Keynes, we believe investing isn’t just financial—it’s moral. As a student-led club, our mission is to grow value while planting seeds of lasting, positive change in our communities.”
         </p>
-        <br />
-        <span className="lg:text-2xl"> — Founding Team</span>
       </div>
+      <img src="/images/Filler.jpg" className="h-[80vh] w-[70vw] mx-auto object-cover my-20" alt="" />
       <Impact />
       <div className="min-h-[50vh] flex gap-12 py-12 px-6 md:px-12 items-center flex-wrap lg:flex-nowrap">
         <p className="text-brown font-bold text-2xl">Our Patners</p>
