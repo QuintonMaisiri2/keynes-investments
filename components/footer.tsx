@@ -7,9 +7,13 @@ import { Mail, Linkedin, Instagram, Twitter } from "lucide-react";
 import { navItems } from "./main-nav";
 
 const documents = [
-  { href: "documents/Terms & Conditions.pdf", label: "Terms and Conditions" },
-  { href: "documents/Privacy Policy.pdf", label: "Privacy Policy" },
-  { href: "documents/Disclaimer.pdf", label: "Disclaimer" },
+  // { href: "documents/Terms & Conditions.pdf", label: "Terms and Conditions" },
+  // { href: "documents/Privacy Policy.pdf", label: "Privacy Policy" },
+  // { href: "documents/Disclaimer.pdf", label: "Disclaimer" },
+  { href: "/terms-and-conditions", label: "Terms and Conditions" },
+  { href: "/privacy-policy", label: "Privacy Policy" },
+  { href: "/disclaimer", label: "Disclaimer" },
+
 ];
 
 export function Footer() {
@@ -66,7 +70,6 @@ export function Footer() {
             <a
               key={doc.href}
               href={doc.href}
-              target="_blank"
               className="block text-sm hover:underline"
             >
               {doc.label}
