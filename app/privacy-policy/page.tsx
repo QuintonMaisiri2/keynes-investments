@@ -243,17 +243,17 @@ const info = [
 
 
   return (
-    <div className="font-ebgaramond text-brown">
-      <div className="bg-brown text-7xl px-12 pt-4 h-[20vh] text-white">
+  <div className="font-ebgaramond text-brown">
+      <div className="bg-brown text-5xl lg:text-7xl lg:px-12 px-6 py-4 min-h-[20vh] text-white">
         Privacy Policy
       </div>
-      <div className=" px-12 py-8">
+      <div className=" lg:px-12 px-6 py-8">
         <p className="mb-8">Last updated: May 16, 2025</p>
         {info.map((item, index)=>{
             return <div key={index} className="space-y-2 mb-10">
-                <h2 className="text-4xl">{index + 1}. {item.heading}</h2>
+                <h2 className="lg:text-4xl text-2xl">{index + 1}. {item.heading}</h2>
                 {item.text.map((text, index)=>{
-                    return <p className="text-lg" key={index}>
+                    return <p className="lg:text-lg" key={index}>
                         {text}
                     </p>
                 })}

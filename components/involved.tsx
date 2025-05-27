@@ -39,9 +39,8 @@ export default function Involved() {
             Membership Criteria
           </h2>
           <ul className="text-brown list-disc space-y-2 mb-6">
-            <li>Must be enrolled in a university program (UG or PG)</li>
             <li>Demonstrated interest in finance, economics, or related fields</li>
-            <li>Strong academic curiosity and leadership potentia</li>
+            <li>Strong academic curiosity and leadership potential</li>
             <li>Passion for ethical investing and ESG principles</li>
             <li>
               Interview with our founding committee for shortlisted applicants

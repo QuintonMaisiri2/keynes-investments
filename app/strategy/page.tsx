@@ -147,10 +147,10 @@ export default function StrategyPage() {
         </div>
       </section>
       <div className=" min-h-[50vh] flex flex-col gap-y-6 lg:flex-row lg:items-center bg-brown py-12 px-6 md:px-12 ">
-        <div className="lg:w-1/3">
+        <div className="lg:w-1/3 text-2xl">
           <p>Mision statement</p>
         </div>
-        <p className="lg:text-7xl md:text-5xl text-3xl font-ebgaramond ">
+        <p className="lg:text-5xl md:text-3xl text-3xl font-ebgaramond ">
           “To equip future finance professionals with real-world experience
           managing capital while contributing to societal good through ethical
           investing and community reinvestment.”
@@ -165,7 +165,7 @@ export default function StrategyPage() {
             Investment Governance
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-brown">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-brown mt-10">
             {risks.map((item, index) => {
               return (
                 <div key={index} className="border border-brown/20 p-8">

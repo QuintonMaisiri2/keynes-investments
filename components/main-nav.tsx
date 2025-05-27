@@ -10,7 +10,7 @@ export const navItems = [
   { href: "/join", label: "Join the Fund" },
   { href: "/strategy", label: "Investment Strategy" },
   { href: "/resources", label: "Resources" },
-  { href: "/news", label: "News" },
+  { href: "/blog", label: "Blog" },
   // { href: "/testimonials", label: "Testimonials" },
   { href: "/contact", label: "Contact" },
 ];
@@ -49,10 +49,10 @@ export function MainNav() {
             width={100}
             height={100}
             alt="kenyes logo"
-            className="w-16"
+            className="md:w-16 w-10"
           ></Image>
           <h1
-            className={`text-2xl font-medium font-ebgaramond ${
+            className={`text-xl md:text-2xl font-medium font-ebgaramond ${
               isScrolled ? "text-white" : "text-brown"
             }`}
           >
@@ -66,9 +66,9 @@ export function MainNav() {
             <Link
               key={item.href}
               href={item.href}
-               className={`text-xl hover:text-white/80 transition-colors ${
-                  isScrolled ? "text-white" : "text-brown"
-                }`}
+              className={`text-xl hover:text-white/80 transition-colors ${
+                isScrolled ? "text-white" : "text-brown"
+              }`}
             >
               {item.label}
             </Link>
@@ -76,7 +76,12 @@ export function MainNav() {
         </nav>
 
         {/* Mobile Menu Button */}
-        <button onClick={toggleMenu} className="text-brown lg:hidden z-[20]">
+        <button
+          onClick={toggleMenu}
+          className={`lg:hidden z-[20] ${
+            isScrolled ? "text-white" : "text-brown"
+          }`}
+        >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 

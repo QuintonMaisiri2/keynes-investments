@@ -32,9 +32,9 @@ export default function Why() {
         <img
           src="/images/why.jpg"
           alt="Join Keynes Investments"
-          className="shadow-lg w-2/3 h-[70vh] object-cover absolute top-20 -left-20 hidden lg:block"
+          className="shadow-lg w-2/3 h-[40vh] object-cover top-20 -left-20 hidden lg:block"
         />
-        <div className="lg:w-2/3 w-full lg:min-h-[60vh] shadow-lg bg-brown lg:absolute bottom-0 right-20 p-8 font-thin gap-4 flex flex-col">
+        <div className="lg:w-2/3 w-full lg:min-h-[60vh] shadow-lg bg-brown  bottom-0 right-20 p-8 font-thin gap-4 flex flex-col">
           <p className="font-bold text-2xl border-b border-b-2 w-max pr-4 pb-2">
             Our core values
           </p>
