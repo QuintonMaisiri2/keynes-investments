@@ -77,7 +77,7 @@ export default function StrategyPage() {
         </div>
       </div> */}
 
-      <section className="py-12 px-r md:pr-12 min-h-screen max-w-7xl mx-auto  flex flex-col lg:flex-row gap-12">
+      <section className="px-6 md:px-12 lg:py-12 px-r md:pr-12 min-h-screen max-w-7xl mx-auto  flex flex-col lg:flex-row gap-12">
         <div className="mt-20 ">
           <h2
             className={` text-brown text-4xl md:text-7xl font-medium mb-6 pb-2 border-b-2 border-b-brown/50 w-max`}
@@ -160,7 +160,7 @@ export default function StrategyPage() {
       <section className="py-12 px-6 md:px-12 min-h-screen max-w-7xl mx-auto min-h-screen">
         <div className="mt-20">
           <h2
-            className={`text-brown text-4xl md:text-7xl font-medium mb-6 w-max pb-2 border-b-2 border-b-brown/50`}
+            className={`text-brown text-4xl md:text-7xl font-medium mb-6 lg:w-max pb-2 border-b-2 border-b-brown/50`}
           >
             Investment Governance
           </h2>

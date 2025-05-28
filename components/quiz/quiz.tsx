@@ -39,7 +39,7 @@ export default function Quiz() {
   };
 
   return (
-    <div className="w-[30vw] mx-auto p-6 border rounded-lg shadow bg-white">
+    <div className="lg:w-[30vw] w-full mx-auto p-6 border rounded-lg shadow bg-white">
       <div
         className={
           !showScore

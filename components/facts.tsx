@@ -20,8 +20,8 @@ export default function Facts() {
   ];
   return (
     <section className="py-12 border-t border-brown/10 min-h-screen flex flex-col relative ">
-      <div className="flex flex-col md:flex-row items-start justify-between px-6 md:px-12 py-10">
-        <h3 className={`text-brown text-2xl font-bold text-center w-1/3`}>
+      <div className="flex flex-col md:flex-row items-start justify-between px-6 md:px-12 md:py-10">
+        <h3 className={`text-brown text-2xl mb-6 md:mb-0 font-bold text-center md:w-1/3`}>
           Quick Facts
         </h3>
         <div className="grid md:grid-cols-3 gap-x-10 gap-y-6 lg:w-2/3">
@@ -39,11 +39,11 @@ export default function Facts() {
           ))}
         </div>
       </div>
-      <div className="py-20 px-6 md:px-12 bg-amber-50/50 flex flex-col md:flex-row mt-10">
-        <h3 className={` text-brown md:text-center text-2xl font-medium w-1/3`}>
+      <div className="md:py-20 py-8  px-6  lg:px-12 bg-amber-50/50 flex flex-col md:flex-row mt-10">
+        <h3 className={` text-brown md:text-center text-2xl font-medium lg:w-1/3 mb-6 mr-6 md:mb-0` }>
           About Us
         </h3>
-        <div className="md:w-2/3 text-brown font-ebgaramon text-xl md:text-4xl md:px-4 md:border-l md:border-l-2">
+        <div className="lg:w-2/3 text-brown font-ebgaramon text-xl md:text-4xl md:px-4 md:border-l md:border-l-2">
           <p className="leading-[150%]">
          Founded in 2025 by passionate and principled high school students, Keynes Investments is a private, student-led investment club redefining how capital is used for good. Built in response to the short-term focus of conventional investing, the club brings together a select group of students committed to long-term value creation, ethical investing, and continuous learning. Membership is highly selective—reserved for those who show both sharp analytical acumen and a genuine drive to make an impact.
           </p>

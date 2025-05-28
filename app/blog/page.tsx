@@ -1,12 +1,10 @@
-"use client";
 import { PageHeader } from "@/components/page-header";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { CalendarIcon } from "lucide-react";
 import { client } from "../sanity/client";
 import { SanityDocument } from "next-sanity";
 import { useState } from "react";
+import Newsletter from "@/components/newsletter";
 
 const POSTS_QUERY = `*[_type == "post" && defined(slug.current)]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt,"excerpt": body[0].children[0].text}`;
 const EVENTS_QUERY = `*[_type == "event" && defined(slug.current)]|order(eventDate asc)[0...3]{_id, title, slug, eventDate, location}`;
@@ -34,34 +32,6 @@ export default async function NewsPage() {
     {},
     options
   );
-
-  
-    const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
-  
-  const handleNewsLetterSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  
-    setLoading(true);
-    try {
-      const res = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
-      setLoading(false);
-      if (res.ok) {
-        window.alert("Subscription successful!");
-        setEmail(""); // Clear the input field after successful subscription
-      } else {
-        window.alert("Failed to subscribe");
-      }
-    } catch (error) {
-      window.alert("An error occurred while subscribing. Please try again.");
-    }
-  };
 
   return (
     <div>
@@ -92,7 +62,7 @@ export default async function NewsPage() {
                   </h3>
                   <p className="text-brown mb-4">{post.excerpt}</p>
                   <Link
-                    href={`/news/${post.slug.current}`}
+                    href={`/blog/${post.slug.current}`}
                     className="text-brown font-medium hover:underline"
                   >
                     Read more →
@@ -103,50 +73,23 @@ export default async function NewsPage() {
           </div>
 
           <div>
-            <div className="bg-amber-50/50 p-6 rounded-lg mb-8">
-              <h3 className={` text-brown text-2xl font-medium mb-4`}>
-                Newsletter
-              </h3>
-              <p className="text-brown mb-4">
-                Subscribe to our monthly newsletter for investment insights,
-                event announcements, and updates on our charitable impact.
-              </p>
-              <form className="space-y-4" onSubmit={handleNewsLetterSubmit}>
-                <div>
-                  <Input
-                    placeholder="Your email address"
-                    className="bg-white"
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  className="w-full bg-brown hover:bg-brown/90"
-                >
-                 {loading ? <p>Subscribing...</p> : <p>Subscribe</p>}
-                </Button>
-              </form>
-            </div>
-
+            <Newsletter />
             <div className="border border-brown/20 rounded-lg p-6 mb-8">
               <h3 className={` text-brown text-2xl font-medium mb-4`}>
                 Upcoming Events
               </h3>
               <div className="space-y-4">
                 {events.map((event) => (
-                  <div key={event._id} className="border-b border-brown/10 pb-4">
-                     <p className="text-brown font-medium">
-                    {event.title}
-                  </p>
-                  <p className="text-brown/70 text-sm">
-                    {formatDate(new Date(event.eventDate))} • {getTime(new Date(event.eventDate))}
-                  </p>
-                  <p className="text-brown text-sm mt-1">
-                    {event.location}
-                  </p>
+                  <div
+                    key={event._id}
+                    className="border-b border-brown/10 pb-4"
+                  >
+                    <p className="text-brown font-medium">{event.title}</p>
+                    <p className="text-brown/70 text-sm">
+                      {formatDate(new Date(event.eventDate))} •{" "}
+                      {getTime(new Date(event.eventDate))}
+                    </p>
+                    <p className="text-brown text-sm mt-1">{event.location}</p>
                   </div>
                 ))}
               </div>

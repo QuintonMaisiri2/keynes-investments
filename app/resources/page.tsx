@@ -246,7 +246,7 @@ export default function ResourcesPage() {
       <section className="text-brown bg-amber-50/50">
         <div className="py-12 px-6 lg:px-12 flex flex-col lg:flex-row gap-12 max-w-7xl lg:items-center mx-auto  min-h-screen ">
           <div className="space-y-6 lg:w-1/2">
-            <h1 className="font-medium border-b border-b-2 w-max text-7xl">
+            <h1 className="font-medium border-b border-b-2 lg:w-max text-4xl lg:text-7xl">
               Quick Quiz{" "}
             </h1>
             <p>

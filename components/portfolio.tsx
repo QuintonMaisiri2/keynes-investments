@@ -2,7 +2,7 @@ import { Progress } from "./ui/progress";
 
 export default function Portfolio() {
     return (
-         <section className="min-h-screen">
+         <section className="min-h-screen md:py-20 py-8  px-6 md:px-12 ">
         <div className="md:w-2/3 mx-auto">
           <h3 className={` text-brown text-3xl md:text-4xl font-bold`}>
             Portfolio Snapshot

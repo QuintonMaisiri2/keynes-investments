@@ -22,7 +22,7 @@ export default function Home() {
           “At Keynes, we believe investing isn’t just financial—it’s moral. As a student-led club, our mission is to grow value while planting seeds of lasting, positive change in our communities.”
         </p>
       </div>
-      <img src="/images/Filler.jpg" className="h-[80vh] w-[70vw] mx-auto object-cover my-20" alt="" />
+      <img src="/images/Filler.jpg" className="lg:h-[80vh] lg:w-[70vw] mx-auto object-cover lg:my-20" alt="" />
       <Impact />
       <div className="min-h-[50vh] flex gap-12 py-12 px-6 md:px-12 items-center flex-wrap lg:flex-nowrap">
         <p className="text-brown font-bold text-2xl">Our Patners</p>

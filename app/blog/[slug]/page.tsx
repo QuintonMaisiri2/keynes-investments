@@ -25,7 +25,7 @@ export default async function PostPage({
     : null;
 
   return (
-    <main className="container mx-auto min-h-screen max-w-5xl p-8 flex flex-col gap-4 text-brown font-roboto space-y-6">
+    <main className="container mx-auto min-h-screen max-w-5xl p-8 flex flex-col gap-4 text-brown font-ebgaramond space-y-6">
       <Link href="/" className="hover:underline">
         ← Back to posts
       </Link>
@@ -34,7 +34,7 @@ export default async function PostPage({
         <img
           src={postImageUrl}
           alt={post.title}
-          className="aspect-video object-cover w-[70%]"
+          className="aspect-video object-cover lg:w-[70%]"
         />
       )}
       <div className="prose space-y-4">
