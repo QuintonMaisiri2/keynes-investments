@@ -5,18 +5,43 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Mail, Linkedin, Instagram, Twitter } from "lucide-react";
 import { navItems } from "./main-nav";
+import { useState } from "react";
 
 const documents = [
-  // { href: "documents/Terms & Conditions.pdf", label: "Terms and Conditions" },
-  // { href: "documents/Privacy Policy.pdf", label: "Privacy Policy" },
-  // { href: "documents/Disclaimer.pdf", label: "Disclaimer" },
   { href: "/terms-and-conditions", label: "Terms and Conditions" },
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/disclaimer", label: "Disclaimer" },
-
 ];
 
 export function Footer() {
+
+  const [email, setEmail] = useState("");
+const [loading, setLoading] = useState(false);
+
+const handleNewsLetterSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  setLoading(true);
+  try {
+    const res = await fetch("/api/subscribe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email }),
+    });
+    setLoading(false);
+    if (res.ok) {
+      window.alert("Subscription successful!");
+      setEmail(""); // Clear the input field after successful subscription
+    } else {
+      window.alert("Failed to subscribe");
+    }
+  } catch (error) {
+    window.alert("An error occurred while subscribing. Please try again.");
+  }
+};
+
   return (
     <footer className="w-full py-12 px-6 md:px-24 bg-brown border-t border-brown/20 font-ebgaramond relative">
       <div className=" flex flex-col md:flex-row gap-5 md:gap-0 justify-between mb-6">
@@ -31,19 +56,26 @@ export function Footer() {
             ></Image>
             <h3 className="font-bold text-2xl">Keynes Investments</h3>
           </div>
-
+          <p>Subscribe to our news leter</p>
           <div className="mt-6">
-            <form className="flex gap-2 max-w-md">
+            <form
+              className="flex gap-2 max-w-md"
+              onSubmit={handleNewsLetterSubmit}
+            >
               <Input
                 type="email"
+                name="email"
                 placeholder="Enter your email"
                 className="bg-white"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
               />
               <Button
                 type="submit"
                 className="bg-white hover:bg-amber-50/50 hover:shadow hover:text-white/90  text-brown whitespace-nowrap"
               >
-                Subscribe
+                {loading ? "Subscribing..." : "Subscribe"}
               </Button>
             </form>
           </div>

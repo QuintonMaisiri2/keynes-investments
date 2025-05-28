@@ -12,9 +12,10 @@ import {
   Twitter,
 } from "lucide-react";
 import { FormInput } from "@/components/formInput";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { sendEmail } from "@/lib/helper";
 
-interface ContactFormData {
+export interface ContactFormData {
   firstName?: string;
   lastName?: string;
   email?: string;
@@ -29,10 +30,28 @@ export default function ContactPage() {
     subject: "",
     message: "",
   });
+  const [loading,setLoading] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted:", form);
+    setLoading(true)
+    const res = await fetch('/api/contact',{
+      method: "POST",
+      body: JSON.stringify(form)
+    })
+    setLoading(true)
+    if (res.ok){
+      window.alert("message sent successfully")
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    }else{
+      window.alert("failed to send message successfully")
+    }
   };
   return (
     <div className="font-ebgaramond">
@@ -65,6 +84,7 @@ export default function ContactPage() {
                     id="firstName"
                     type="text"
                     name="First Name"
+                    value={form.firstName}
                     onChange={(e) =>
                       setFormData({ ...form, firstName: e.target.value })
                     }
@@ -73,6 +93,7 @@ export default function ContactPage() {
                     id="lastName"
                     type="text"
                     name="Last Name"
+                    value={form.lastName}
                     onChange={(e) =>
                       setFormData({ ...form, lastName: e.target.value })
                     }
@@ -82,6 +103,7 @@ export default function ContactPage() {
                   id="email"
                   type="email"
                   name="Email"
+                  value={form.email}
                   onChange={(e) =>
                     setFormData({ ...form, email: e.target.value })
                   }
@@ -90,6 +112,7 @@ export default function ContactPage() {
                   id="subject"
                   type="text"
                   name="Subject"
+                  value={form.subject}
                   onChange={(e) =>
                     setFormData({ ...form, subject: e.target.value })
                   }
@@ -103,6 +126,7 @@ export default function ContactPage() {
                     id="message"
                     rows={4}
                     className="bg-white"
+                    value={form.message}
                     onChange={(e) =>
                       setFormData({ ...form, message: e.target.value })
                     }
@@ -113,7 +137,7 @@ export default function ContactPage() {
                   type="submit"
                   className="w-full bg-brown hover:bg-brown/90"
                 >
-                  Submit Application
+                 {loading ? <p>Sending...</p> : <p>Send Message</p>}
                 </Button>
               </form>
             </div>
@@ -128,7 +152,7 @@ export default function ContactPage() {
                   <Mail className="text-brown mr-4 mt-1" size={24} />
                   <div>
                     <h3 className="text-brown font-medium mb-1">Email</h3>
-                    <p className="text-brown">info@keynesinvestments.com</p>
+                    <p className="text-brown"> keynesinvests.capital@gmail.com</p>
                   </div>
                 </div>
 
@@ -136,20 +160,17 @@ export default function ContactPage() {
                   <MapPin className="text-brown mr-4 mt-1" size={24} />
                   <div>
                     <h3 className="text-brown font-medium mb-1">Location</h3>
-                    <p className="text-brown">Finance Building, Room 204</p>
-                    <p className="text-brown">
-                      University Campus, College Town, CT 10101
-                    </p>
+                    <p className="text-brown">UAE, Abu Dhabi</p>
                   </div>
                 </div>
 
-                <div className="flex items-start">
+                {/* <div className="flex items-start">
                   <Phone className="text-brown mr-4 mt-1" size={24} />
                   <div>
                     <h3 className="text-brown font-medium mb-1">Phone</h3>
                     <p className="text-brown">(555) 123-4567</p>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="flex items-start">
                   <Clock className="text-brown mr-4 mt-1" size={24} />
@@ -158,7 +179,7 @@ export default function ContactPage() {
                       Office Hours
                     </h3>
                     <p className="text-brown">
-                      Monday - Friday: 10:00 AM - 4:00 PM
+                      Monday - Thursday: 4:00 PM - 8:00 PM
                     </p>
                     <p className="text-brown">By appointment only</p>
                   </div>

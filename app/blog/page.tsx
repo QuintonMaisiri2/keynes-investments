@@ -1,3 +1,4 @@
+"use client";
 import { PageHeader } from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -5,6 +6,7 @@ import Link from "next/link";
 import { CalendarIcon } from "lucide-react";
 import { client } from "../sanity/client";
 import { SanityDocument } from "next-sanity";
+import { useState } from "react";
 
 const POSTS_QUERY = `*[_type == "post" && defined(slug.current)]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt,"excerpt": body[0].children[0].text}`;
 const EVENTS_QUERY = `*[_type == "event" && defined(slug.current)]|order(eventDate asc)[0...3]{_id, title, slug, eventDate, location}`;
@@ -32,6 +34,34 @@ export default async function NewsPage() {
     {},
     options
   );
+
+  
+    const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  
+  const handleNewsLetterSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  
+    setLoading(true);
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+      setLoading(false);
+      if (res.ok) {
+        window.alert("Subscription successful!");
+        setEmail(""); // Clear the input field after successful subscription
+      } else {
+        window.alert("Failed to subscribe");
+      }
+    } catch (error) {
+      window.alert("An error occurred while subscribing. Please try again.");
+    }
+  };
 
   return (
     <div>
@@ -81,19 +111,22 @@ export default async function NewsPage() {
                 Subscribe to our monthly newsletter for investment insights,
                 event announcements, and updates on our charitable impact.
               </p>
-              <form className="space-y-4">
+              <form className="space-y-4" onSubmit={handleNewsLetterSubmit}>
                 <div>
                   <Input
                     placeholder="Your email address"
                     className="bg-white"
                     type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
                   />
                 </div>
                 <Button
                   type="submit"
                   className="w-full bg-brown hover:bg-brown/90"
                 >
-                  Subscribe
+                 {loading ? <p>Subscribing...</p> : <p>Subscribe</p>}
                 </Button>
               </form>
             </div>

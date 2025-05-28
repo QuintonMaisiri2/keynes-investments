@@ -235,7 +235,7 @@ const info = [
     text: [
       `If you have any questions about this Privacy Policy or our privacy practices, please contact us at:`,
       `Keynes Investments`,
-      `Email: [Insert Contact Email]`,
+      `Email:  keynesinvests.capital@gmail.com`,
     ],
   },
 ];

@@ -19,6 +19,7 @@ export const FormInput = ({ id, type, name, onChange, value }: FormInputProps) =
         type={type}
         className="bg-white"
         onChange={onChange}
+        required
         value={value}
       />
     </div>

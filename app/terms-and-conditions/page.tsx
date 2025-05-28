@@ -112,7 +112,7 @@ const info = [
     heading: "CONTACT INFORMATION",
     text: [
       `If you have any questions, please contact us at:`,
-      `Keynes Investments`,
+      ` keynesinvests.capital@gmail.com`,
     ],
   },
 ];

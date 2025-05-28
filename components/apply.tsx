@@ -1,11 +1,10 @@
 "use client";
 import { useState } from "react";
 import { Button } from "./ui/button";
-import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { FormInput } from "./formInput";
 
-interface ApplyData {
+export interface ApplyData {
   firstName?: string;
   lastName?: string;
   email?: string;
@@ -24,10 +23,29 @@ export default function apply() {
     phone: "",
     motivation: "",
   });
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted:", form);
+
+    setLoading(true);
+    const res = await fetch('/api/apply', {
+      method: "POST",
+      body: JSON.stringify(form),
+    })
+    setLoading(false);
+    if (res.ok) {
+      window.alert("Application submitted successfully");
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        motivation: "",
+      });
+    } else {
+      window.alert("Failed to submit application");
+    }
   }
   return (
     <section className="py-12 px-6 md:px-12 bg-amber-50/50 min-h-screen">
@@ -42,6 +60,7 @@ export default function apply() {
                 id="firstName"
                 type="text"
                 name="First Name"
+                value={form.firstName}
                 onChange={(e) =>
                   setFormData({ ...form, firstName: e.target.value })
                 }
@@ -50,6 +69,7 @@ export default function apply() {
                 id="lastName"
                 type="text"
                 name="Last Name"
+                value={form.lastName}
                 onChange={(e) =>
                   setFormData({ ...form, lastName: e.target.value })
                 }
@@ -59,6 +79,7 @@ export default function apply() {
                 id="email"
                 type="email"
                 name="Email"
+                value={form.email}
                 onChange={(e) =>
                   setFormData({ ...form, email: e.target.value })
                 }
@@ -68,11 +89,11 @@ export default function apply() {
               <label htmlFor="motivation" className="text-brown">
                 Why do you want to join Keynes Investments?
               </label>
-              <Textarea id="motivation" rows={4} className="bg-white" onChange={(e) => setFormData({...form, motivation : e.target.value})} />
+              <Textarea value={form.motivation} id="motivation" rows={4} className="bg-white" onChange={(e) => setFormData({...form, motivation : e.target.value})} />
             </div>
 
             <Button type="submit" className="w-full bg-brown hover:bg-brown/90">
-              Submit Application
+              {loading ? <p>Submitting...</p> : <p>Submit Application</p>}
             </Button>
           </form>
         </div>
