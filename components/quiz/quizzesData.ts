@@ -27,16 +27,6 @@ export const quizzes = [
         ],
         answer: "A share of profits paid to shareholders",
       },
-      {
-        question: "What is compounding in finance?",
-        options: [
-          "Combining multiple loans",
-          "Earning interest on interest",
-          "A tax calculation method",
-          "A budgeting strategy"
-        ],
-        answer: "Earning interest on interest",
-      },
     ],
   },
   {
@@ -111,16 +101,6 @@ export const quizzes = [
         question: "Which of these is considered a liability?",
         options: ["Car loan", "Rental income", "Stock portfolio", "Savings account"],
         answer: "Car loan",
-      },
-      {
-        question: "Why is it important to start saving early for retirement?",
-        options: [
-          "To spend it all before 50",
-          "To avoid paying taxes",
-          "To benefit from compound interest",
-          "To receive higher salaries"
-        ],
-        answer: "To benefit from compound interest",
       },
     ],
   },

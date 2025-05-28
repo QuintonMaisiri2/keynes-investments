@@ -36,7 +36,7 @@ export default async function NewsPage() {
   return (
     <div>
       <PageHeader
-        title="News & Updates"
+        title="Blog & Updates"
         description="Stay current with Keynes Investments events, announcements, and market insights."
         imageUrl="/images/news.jpg"
       />

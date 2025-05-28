@@ -3,6 +3,7 @@ import "./globals.css"
 import type { Metadata } from "next"
 import { MainNav } from "@/components/main-nav"
 import { Footer } from "@/components/footer"
+import Script from "next/script"
 
 export const metadata: Metadata = {
   title: "Keynes Investments",
@@ -14,8 +15,19 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  return (
     <html lang="en" className={`font-roboto`}>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-7F58TV475Z"
+        strategy="afterInteractive"
+      />
+      <Script id="gtag-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-7F58TV475Z');
+        `}
+      </Script>
       <body >
         <div className="min-h-screen flex flex-col">
           <MainNav />
@@ -24,5 +36,5 @@ export default function RootLayout({
         </div>
       </body>
     </html>
-  )
 }
+
