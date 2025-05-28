@@ -15,13 +15,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  <html lang="en" className={`font-roboto`}>
+  return (<html lang="en" className={`font-roboto`}>
     <head>
-      {" "}
       <Script
+        async
         src="https://www.googletagmanager.com/gtag/js?id=G-7F58TV475Z"
         strategy="afterInteractive"
-      />
+      ></Script>
       <Script id="gtag-init" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
@@ -38,5 +38,5 @@ export default function RootLayout({
         <Footer />
       </div>
     </body>
-  </html>;
+  </html>);
 }
