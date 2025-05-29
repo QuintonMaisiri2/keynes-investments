@@ -66,8 +66,8 @@ export function MainNav() {
             <Link
               key={item.href}
               href={item.href}
-              className={`text-xl hover:text-white/80 transition-colors ${
-                isScrolled ? "text-white" : "text-brown"
+              className={`text-xl transition-colors ${
+                isScrolled ? "text-white hover:text-white/80" : "text-brown hover:text-brown/80"
               }`}
             >
               {item.label}

@@ -1,14 +1,19 @@
+"use client";
 import { PageHeader } from "@/components/page-header";
-import { Playfair_Display } from "next/font/google";
 import Link from "next/link";
-import { BookOpen, FileText, Video, Award } from "lucide-react";
-import { text } from "stream/consumers";
+import { BookOpen } from "lucide-react";
 import Quiz from "@/components/quiz/quiz";
-import { title } from "process";
+import { useState } from "react";
+import BookSummaryCard, { BookSummary } from "@/components/bookSummaryCard";
+import { books } from "@/lib/books";
 
 export default function ResourcesPage() {
+  const [showBookSummary, setShowBookSummary] = useState(false);
+  const [selectedBook, setSelectedBook] = useState<BookSummary>();
+
   const sections = [
     {
+      section: "beginner",
       title: "Beginner : Foundations of Financial Literacy",
       description: "Basic concepts and terminology for new investors.",
       href: "#beginner",
@@ -48,13 +53,14 @@ export default function ResourcesPage() {
       },
     },
     {
+       section: "intermediate",
       title: "Intermediate : Building a Strategic Portfolio",
       description: "In-depth analysis and valuation methods.",
       href: "#intermediate",
       text: [
         "Ready to go beyond the basics? This section is for students who understand foundational concepts and want to develop a more strategic, hands-on approach to investing.",
         "You'll dive into portfolio construction, asset allocation, and reading market trends—while learning how to balance risk and return effectively. We’ll also introduce practical tools like ETFs, index funds, and technical analysis to sharpen your decision-making.",
-        "Perfect for aspiring investors aiming to build and manage a diversified portfolio with purpose and confidence"
+        "Perfect for aspiring investors aiming to build and manage a diversified portfolio with purpose and confidence",
       ],
       imgSrc: "images/intermediate.jpg",
       resources: {
@@ -88,6 +94,7 @@ export default function ResourcesPage() {
       },
     },
     {
+      section: "advanced",
       title: "Advanced : Mastering the Markets",
       description: "Complex strategies and market dynamics.",
       href: "#advanced",
@@ -129,6 +136,14 @@ export default function ResourcesPage() {
   ];
   return (
     <div className="font-ebgaramond">
+      <div
+        onClick={() => setShowBookSummary(false)}
+        className={`fixed top-0 left-0 flex items-center justify-center py-10 w-full h-screen bg-black/50 z-50 ${
+          showBookSummary ? "block" : "hidden"
+        }`}
+      >
+        <BookSummaryCard data={selectedBook} />
+      </div>
       <PageHeader
         title="Resources & Education"
         description="Educational materials created by our student members to help you build your investment knowledge."
@@ -191,9 +206,7 @@ export default function ResourcesPage() {
           id={section.href.substring(1)}
         >
           <div className="flex flex-col gap-12 lg:w-1/2">
-            <h2
-              className={` text-brown text-4xl md:text-7xl font-medium`}
-            >
+            <h2 className={` text-brown text-4xl md:text-7xl font-medium`}>
               {section.title} <br />
             </h2>
             {section.text &&
@@ -223,12 +236,15 @@ export default function ResourcesPage() {
                           size={20}
                         />
                         <div>
-                          <Link
-                            href="#"
+                          <button
+                            onClick={() => {
+                              setSelectedBook(books[section.section as keyof typeof books][index]);
+                              setShowBookSummary(true);
+                            }}
                             className="text-brown font-medium hover:underline"
                           >
                             {book.title}
-                          </Link>
+                          </button>
                           <p className="text-brown/80 text-sm mt-1">
                             {book.synopis}
                           </p>
