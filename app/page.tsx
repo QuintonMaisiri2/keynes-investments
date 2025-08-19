@@ -16,14 +16,14 @@ export default function Home() {
     <div className="flex flex-col font-ebgaramond">
       <Header />
       <Facts />
-        <img src="/images/trend.jpg" className="lg:h-[80vh] lg:w-[70vw] mx-auto object-cover lg:my-20" alt="" />
+        <img src="/images/trend.jpg" className="lg:h-[40vh] lg:w-[70vw] mx-auto object-cover lg:my-20" alt="" />
       <Portfolio />
       <div className=" min-h-[50vh] flex flex-col gap-y-6 lg:flex-row lg:items-center bg-brown py-12 px-6 md:px-12 ">
         <p className="lg:text-7xl md:text-5xl text-3xl font-ebgaramond ">
           At Keynes, we believe investing isn’t just financial—it’s moral. As a student-led club, our mission is to grow value while planting seeds of lasting, positive change in our communities.
         </p>
       </div>
-      <img src="/images/Filler.jpg" className="lg:h-[40vh] lg:w-[70vw] mx-auto object-cover lg:my-20" alt="" />
+      <img src="/images/Filler.jpg" className="lg:h-[60vh] lg:w-[70vw] mx-auto object-cover lg:my-20" alt="" />
       <Impact />
       <div className="min-h-[50vh] flex gap-12 py-12 px-6 md:px-12 items-center flex-wrap lg:flex-nowrap">
         <p className="text-brown font-bold text-2xl">Our Patners</p>
