@@ -62,6 +62,7 @@ export default async function NewsPage() {
                   </h3>
                   <p className="text-brown mb-4">{post.excerpt}</p>
                   <Link
+                    rel="canonical"
                     href={`/blog/${post.slug.current}`}
                     className="text-brown font-medium hover:underline"
                   >

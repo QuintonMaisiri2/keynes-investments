@@ -11,7 +11,7 @@ export const navItems = [
   { href: "/strategy", label: "Investment Strategy" },
   { href: "/resources", label: "Resources" },
   { href: "/blog", label: "Blog" },
-  // { href: "/testimonials", label: "Testimonials" },
+  { href: "/founder", label: "Founder" },
   { href: "/contact", label: "Contact" },
 ];
 
