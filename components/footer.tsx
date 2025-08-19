@@ -108,7 +108,7 @@ const handleNewsLetterSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             </a>
           ))}
         </div>
-        <p>Copyright &copy; Keynes Investments. All rights reserved</p>
+        <p>Copyright &copy;{new Date().getFullYear()} Keynes Investments. All rights reserved</p>
 
         <div className="flex space-x-4">
           <Link href="#" className="text-brown hover:text-brown/80">
