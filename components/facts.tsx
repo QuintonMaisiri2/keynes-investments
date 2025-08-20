@@ -15,7 +15,7 @@ export default function Facts() {
     {
       title: "Fee Structure",
       description: "2% Management, 20% Performance (donated to charity)",
-      text: "2% Management, 20% Performance with 20% of our performance fees donated directly to charitable causes, creating a virtuous cycle of growth and giving",
+      text: "2% Management, 20% Performance with 20% of our performance fees donated directly to charitable causes, creating a virtuous cycle of growth and giving.",
     },
   ];
   return (
@@ -39,7 +39,7 @@ export default function Facts() {
           ))}
         </div>
       </div>
-       <img src="/images/coins.jpg" className="lg:h-[40vh] lg:w-[70vw] mx-auto object-cover lg:my-20" alt="" />
+       <img src="/images/coins.jpg" className="lg:h-[40vh] lg:w-[70vw] mx-auto object-cover my-4 lg:my-20" alt="" />
       <div className="md:py-20 py-8  px-6  lg:px-12 bg-amber-50/50 flex flex-col md:flex-row mt-10">
         <h3 className={` text-brown md:text-center text-2xl font-medium lg:w-1/3 mb-6 mr-6 md:mb-0` }>
           About Us
